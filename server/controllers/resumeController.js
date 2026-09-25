@@ -32,12 +32,13 @@ export const createResume = async (req ,res)=>{
 
 export const getResumes = async (req , res) => {
   try{
+    console.log("request reached")
+
     const resumes = await Resume.find({
       userId:req.user.id,
-    }).sort({
-      createdAt:-1
-    });
+    })
     return res.status(200).json({
+      success:true,
       resumes,
     });
   } catch(error){

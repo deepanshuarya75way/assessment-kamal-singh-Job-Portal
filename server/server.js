@@ -68,7 +68,7 @@ app.use('/api/company', companyRoutes);
 app.use('/api/jobs', jobRouters);
 app.use('/api/users', userRouters);
 
-app.use("/api/reseumes",resumeRouter);
+app.use('/api/resumes',resumeRouter);
 
 // Basic routes
 app.get('/', (req, res) => res.send('Api working'));

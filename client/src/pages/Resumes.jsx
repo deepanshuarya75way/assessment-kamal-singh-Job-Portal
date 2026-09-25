@@ -1,13 +1,14 @@
-import { useEffect , useState } from "react";
+import { useEffect , useState,useContext } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { AppContext } from "../context/AppContext.jsx";
 
 const Resumes = ()=>{
   const [resumes,setResumes] = useState([]);
   const [showForm , setShowForm] = useState(false);
   const [resumeName , setResumeName] = useState("");
   const [loading , setLoading] = useState(false);
-
+const { backendUrl } = useContext(AppContext);
   const backendurl = import.meta.env.VITE_BACKEND_URL;
 
   const getResumes = async ()=>{
@@ -46,7 +47,7 @@ const createResume = async (e) =>{
     if(data.success){
       toast.success("resume created");
 
-      setResume((prev)=>[data.resume, ...prev]);
+      setResumes((prev)=>[data.resume, ...prev]);
       setResumeName("");
       setShowForm(false);
     }

@@ -8,6 +8,6 @@ import{
 const resumeRouter = express.Router();
 
 resumeRouter.post("/",createResume);
-resumeRouter.get("/", getResumes);
+resumeRouter.get("/",getResumes);
 
 export default resumeRouter;
