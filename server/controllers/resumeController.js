@@ -48,7 +48,3 @@ export const getResumes = async (req , res) => {
   }
 };
 
-module.exports = {
-  createResume,
-  getResumes
-}

@@ -56,10 +56,10 @@ const resumeSchema = new mongoose.Schema({
         default:[]
       }
     },
-    timeStamps:true,
+
   
 });
 
-const User = mongoose.model('User', userSchema);
+const Resume = mongoose.model('Resume', resumeSchema);
 
-export default User;
+export default Resume;

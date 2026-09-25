@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 const Resumes = ()=>{
   const [resumes,setResumes] = useState([]);
-  const [showForm , setShowForm] = useState(fasle);
+  const [showForm , setShowForm] = useState(false);
   const [resumeName , setResumeName] = useState("");
   const [loading , setLoading] = useState(false);
 
@@ -13,7 +13,7 @@ const Resumes = ()=>{
   const getResumes = async ()=>{
     try{
       const {data} = await axios.get(
-        `${backendurl}/api.resumes`
+        `${backendurl}/api/resumes`
       );
 
       if(data.success){
@@ -85,7 +85,7 @@ return (
           <form onSubmit={createResume}>
             <input type="text" placeholder="enter resume name" value={resumeName}  onChange={(e)=>setResumeName(e.target.value)}/>
             <div>
-              <button type="submit" disabled={loading}>{loadin ? "creating..." : "create resume"}</button>
+              <button type="submit" disabled={loading}>{loading ? "creating..." : "create resume"}</button>
               <button type="button" onClick={()=>{
                 setShowForm(false)
                 setResumeName("");
