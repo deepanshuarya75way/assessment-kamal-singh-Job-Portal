@@ -25,6 +25,10 @@ const resumeSchema = new mongoose.Schema({
             type:String,
             default:"",
           },
+          startDate:{
+            type:String,
+            default:"",
+          },
           endDate:{
             type:String,
             default:"",
