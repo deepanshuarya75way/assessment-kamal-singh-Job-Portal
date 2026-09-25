@@ -11,6 +11,7 @@ import ViewApplication from './pages/ViewApplication.jsx';
 import ManageJob from './pages/ManageJob.jsx';
 import 'quill/dist/quill.snow.css'
 import { ToastContainer, toast } from 'react-toastify';
+import  Resumes from "./pages/Resumes"
 // import UserDebug from './components/UserDebug'; // Comment out this import
 
 
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/apply-job/:id" element={<ApplyJobs />} />
         <Route path="/application" element={<Applications />} />
+        <Route path='/resumes' element={<Resumes/>}  />
 
 {companyToken ? <>
 <Route path="/dashboard" element={<Dashboard />}>

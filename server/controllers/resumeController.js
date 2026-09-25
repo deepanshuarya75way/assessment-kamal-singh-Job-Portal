@@ -1,6 +1,6 @@
 import Resume from "../models/resume.js";
 
-const createResume = async (req ,res)=>{
+export const createResume = async (req ,res)=>{
   try{
     const {name} = req.body;
     if(!name || !name.trim()){
@@ -30,7 +30,7 @@ const createResume = async (req ,res)=>{
 
 // get all resume
 
-const getResumes = async (req , res) => {
+export const getResumes = async (req , res) => {
   try{
     const resumes = await Resume.find({
       userId:req.user.id,

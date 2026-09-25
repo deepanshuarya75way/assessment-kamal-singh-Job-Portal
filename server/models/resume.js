@@ -15,70 +15,46 @@ const resumeSchema = new mongoose.Schema({
     summary:{
       type:String,
       default:"",
-      experience:[
-        {
-          company:{
-            type:String,
-            default:"",
-          },
-          position:{
-            type:String,
-            default:"",
-          },
-          startDate:{
-            type:String,
-            default:"",
-          },
-          endDate:{
-            type:String,
-            default:"",
-          },
-        },
-      ],
+      experience:{
+        type:[
+          {
+            company:String ,
+            position:String,
+            startDate:String,
+            endDate:String,
+            description:String,
+          }
+        ],
+        default:[]
+      },
 
-      education:[
-        {
-          institutuion:{
-            type:String,
-            default:"",
-          },
-          degree:{
-            type:String,
-            default:"",
-          },
-          startDate:{
-            type:String,
-            default:"",
-          },
-          endDate:{
-            type:String,
-            default:"",
-          },
-        },
-      ],
+      education:{
+        type:[
+          {
+            institution:String,
+            degree:String,
+            startDate:String,
+            endDate:String,
+          }
+        ],
+        default:[]
+      },
 
       skills:[
         {
           type:String,
         },
       ],
-      projects:[
-        {
-          title:{
-            type:String,
-            default:"",
-          },
-          description:{
-            type:String,
-            default:"",
-          },
-          technologies:[
-            {
-              type:String,
-            },
-          ],
-        },
-      ],
+      projects:{
+        type:[
+          {
+            title:String,
+            description:String,
+            technologies:[String]
+          }
+        ],
+        default:[]
+      }
     },
     timeStamps:true,
   
