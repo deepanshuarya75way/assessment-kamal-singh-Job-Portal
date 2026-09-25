@@ -11,6 +11,7 @@ import connectCloudinary from './config/cloudinary.js';
 import jobRouters from './routes/jobRoutes.js';
 import userRouters from './routes/userRouters.js';
 import { clerkMiddleware } from '@clerk/express';
+import resumeRouter from './routes/resume.js';
 
 const app = express();
 
@@ -66,6 +67,8 @@ app.use((err, req, res, next) => {
 app.use('/api/company', companyRoutes);
 app.use('/api/jobs', jobRouters);
 app.use('/api/users', userRouters);
+
+app.use("/api/reseumes",resumeRouter);
 
 // Basic routes
 app.get('/', (req, res) => res.send('Api working'));
